@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pawfect Bites - Gourmet Dog Treats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__content">
+        <a class="site-header__brand" href="#top" aria-label="Pawfect Bites home">
+          Pawfect Bites
+        </a>
+        <nav class="site-header__nav" aria-label="Primary">
+          <a class="site-header__link" href="#treats">Treats</a>
+          <a class="site-header__link" href="#cart">Cart</a>
+        </nav>
+        <button class="cart-summary" type="button" id="cart-toggle" aria-expanded="false" aria-controls="cart">
+          <span class="cart-summary__label">Basket</span>
+          <span class="cart-summary__count" id="cart-count" aria-live="polite">0</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero__overlay"></div>
+      <div class="hero__content container">
+        <h1>Pawfect Bites</h1>
+        <p>
+          Small-batch, vet-approved dog treats baked fresh with human-grade
+          ingredients. Spoil your best friend with wholesome goodness.
+        </p>
+        <a class="btn" href="#treats">Shop treats</a>
+      </div>
+    </section>
+
+    <main>
+      <section class="section" id="treats">
+        <div class="section__heading container">
+          <h2>Featured Treats</h2>
+          <p>
+            All treats are free from artificial colors and preservatives and
+            made in our certified canine kitchen.
+          </p>
+        </div>
+        <div class="product-grid container">
+          <article class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80"
+              alt="Dog biscuits stacked in a jar"
+            />
+            <div class="product-card__body">
+              <h3>Maple Bacon Crunchies</h3>
+              <p class="product-card__description">
+                Crispy bacon-infused biscuits with a hint of pure maple syrup for
+                an irresistible crunch.
+              </p>
+              <div class="product-card__footer">
+                <span class="price">$11.50</span>
+                <button class="btn btn--secondary" type="button" data-product="Maple Bacon Crunchies" data-price="11.50">
+                  Add to basket
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80"
+              alt="Dog waiting for peanut butter treats"
+            />
+            <div class="product-card__body">
+              <h3>Peanut Butter Pumpkin Bites</h3>
+              <p class="product-card__description">
+                Soft-baked morsels packed with roasted pumpkin, flaxseed, and
+                creamy peanut butter.
+              </p>
+              <div class="product-card__footer">
+                <span class="price">$9.75</span>
+                <button class="btn btn--secondary" type="button" data-product="Peanut Butter Pumpkin Bites" data-price="9.75">
+                  Add to basket
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=600&q=80"
+              alt="Dog treat shaped like a donut"
+            />
+            <div class="product-card__body">
+              <h3>Blueberry Yogurt Donuts</h3>
+              <p class="product-card__description">
+                Oven-baked oat donuts dipped in probiotic yogurt glaze with wild
+                blueberries.
+              </p>
+              <div class="product-card__footer">
+                <span class="price">$13.00</span>
+                <button class="btn btn--secondary" type="button" data-product="Blueberry Yogurt Donuts" data-price="13.00">
+                  Add to basket
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=600&q=80"
+              alt="Dog treat shaped like bones"
+            />
+            <div class="product-card__body">
+              <h3>Sweet Potato Chew Sticks</h3>
+              <p class="product-card__description">
+                Long-lasting dehydrated sweet potato sticks to keep chewers busy
+                and satisfied.
+              </p>
+              <div class="product-card__footer">
+                <span class="price">$8.25</span>
+                <button class="btn btn--secondary" type="button" data-product="Sweet Potato Chew Sticks" data-price="8.25">
+                  Add to basket
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container section__heading">
+          <h2>Why dogs love Pawfect Bites</h2>
+        </div>
+        <div class="container feature-grid">
+          <article class="feature">
+            <h3>Human-grade ingredients</h3>
+            <p>
+              Every treat is crafted with premium, locally sourced ingredients
+              that you can actually pronounce.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Vet-approved recipes</h3>
+            <p>
+              Formulated alongside veterinary nutritionists to balance flavor and
+              nutrition for your pup.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Baked fresh weekly</h3>
+            <p>
+              We bake in small batches to lock in freshness and ship directly to
+              your door.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="cart">
+        <div class="container cart">
+          <div class="cart__header">
+            <h2>Your cart</h2>
+            <button class="btn btn--ghost" type="button" id="clear-cart">Clear cart</button>
+          </div>
+          <ul class="cart__items" id="cart-items" aria-live="polite"></ul>
+          <div class="cart__footer">
+            <span class="cart__total-label">Subtotal</span>
+            <span class="cart__total" id="cart-total">$0.00</span>
+          </div>
+          <button class="btn btn--primary cart__checkout" type="button" id="checkout">
+            Checkout securely
+          </button>
+          <p class="cart__note">
+            Free shipping on orders over $45. Orders ship within 2 business days.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <div>
+          <h3>Pawfect Bites</h3>
+          <p>Handmade treats for happy tails.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: <a href="mailto:hello@pawfectbites.com">hello@pawfectbites.com</a></li>
+            <li>Phone: <a href="tel:+15551234567">(555) 123-4567</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit our bakery</h4>
+          <p>123 Tail Wag Lane<br />Barkington, PA 19001</p>
+        </div>
+      </div>
+      <p class="footer__credit">© <span id="year"></span> Pawfect Bites. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -15,14 +15,22 @@
   <body>
     <header class="site-header">
       <div class="container site-header__content">
-        <a class="site-header__brand" href="#top" aria-label="Pawfect Bites home">
-          Pawfect Bites
-        </a>
+        <a class="site-header__brand" href="#top" aria-label="Pawfect Bites home"
+          >Pawfect Bites</a
+        >
         <nav class="site-header__nav" aria-label="Primary">
           <a class="site-header__link" href="#treats">Treats</a>
+          <a class="site-header__link" href="#story">Our story</a>
+          <a class="site-header__link" href="#faq">FAQ</a>
           <a class="site-header__link" href="#cart">Cart</a>
         </nav>
-        <button class="cart-summary" type="button" id="cart-toggle" aria-expanded="false" aria-controls="cart">
+        <button
+          class="cart-summary"
+          type="button"
+          id="cart-toggle"
+          aria-expanded="false"
+          aria-controls="cart"
+        >
           <span class="cart-summary__label">Basket</span>
           <span class="cart-summary__count" id="cart-count" aria-live="polite">0</span>
         </button>
@@ -32,39 +40,67 @@
     <section class="hero" id="top">
       <div class="hero__overlay"></div>
       <div class="hero__content container">
-        <h1>Pawfect Bites</h1>
+        <p class="hero__eyebrow">Small-batch dog bakery</p>
+        <h1>Baked for happy, healthy tails</h1>
         <p>
-          Small-batch, vet-approved dog treats baked fresh with human-grade
-          ingredients. Spoil your best friend with wholesome goodness.
+          We handcraft every treat in our certified canine kitchen using human-grade
+          ingredients, mindful nutrition, and a whole lot of love.
         </p>
-        <a class="btn" href="#treats">Shop treats</a>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#treats">Shop best sellers</a>
+          <a class="btn btn--outline" href="#story">See our standards</a>
+        </div>
       </div>
     </section>
 
     <main>
       <section class="section" id="treats">
         <div class="section__heading container">
-          <h2>Featured Treats</h2>
+          <h2>Weekly bakery best sellers</h2>
           <p>
-            All treats are free from artificial colors and preservatives and
-            made in our certified canine kitchen.
+            Rotating seasonal flavors meet the classics your pup craves. Every pouch ships
+            fresh within 24 hours of baking.
           </p>
         </div>
         <div class="product-grid container">
           <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80"
-              alt="Dog biscuits stacked in a jar"
-            />
+            <figure class="product-card__media">
+              <span class="product-card__badge">Top seller</span>
+              <img
+                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+                alt="Glass jar filled with maple bacon dog biscuits"
+                loading="lazy"
+              />
+            </figure>
             <div class="product-card__body">
-              <h3>Maple Bacon Crunchies</h3>
+              <div class="product-card__header">
+                <h3>Maple Bacon Crunchies</h3>
+                <div class="product-card__meta">
+                  <span class="product-card__meta-tag">8 oz pouch</span>
+                  <span class="product-card__meta-tag">Grain-free</span>
+                </div>
+              </div>
               <p class="product-card__description">
-                Crispy bacon-infused biscuits with a hint of pure maple syrup for
-                an irresistible crunch.
+                Crispy bacon-infused biscuits with a hint of pure maple syrup for an
+                irresistible crunch.
               </p>
+              <ul class="product-card__highlights">
+                <li>Uncured applewood-smoked bacon</li>
+                <li>Maple drizzle finish</li>
+                <li>Slow-baked for a tooth-friendly snap</li>
+              </ul>
               <div class="product-card__footer">
-                <span class="price">$11.50</span>
-                <button class="btn btn--secondary" type="button" data-product="Maple Bacon Crunchies" data-price="11.50">
+                <div class="product-card__price-group">
+                  <span class="price">$11.50</span>
+                  <span class="product-card__note">Avg 24 biscuits</span>
+                </div>
+                <button
+                  class="btn btn--secondary"
+                  type="button"
+                  data-product="Maple Bacon Crunchies"
+                  data-price="11.50"
+                  data-pack="8 oz pouch"
+                >
                   Add to basket
                 </button>
               </div>
@@ -72,19 +108,43 @@
           </article>
 
           <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80"
-              alt="Dog waiting for peanut butter treats"
-            />
+            <figure class="product-card__media">
+              <span class="product-card__badge product-card__badge--accent">Limited batch</span>
+              <img
+                src="https://images.unsplash.com/photo-1601758125946-6ec2e08068f8?auto=format&fit=crop&w=900&q=80"
+                alt="Soft pumpkin and peanut butter dog treats arranged on a tray"
+                loading="lazy"
+              />
+            </figure>
             <div class="product-card__body">
-              <h3>Peanut Butter Pumpkin Bites</h3>
+              <div class="product-card__header">
+                <h3>Peanut Butter Pumpkin Bites</h3>
+                <div class="product-card__meta">
+                  <span class="product-card__meta-tag">6 oz pouch</span>
+                  <span class="product-card__meta-tag">Soft-baked</span>
+                </div>
+              </div>
               <p class="product-card__description">
-                Soft-baked morsels packed with roasted pumpkin, flaxseed, and
-                creamy peanut butter.
+                Soft-baked morsels packed with roasted pumpkin, flaxseed, and creamy peanut
+                butter.
               </p>
+              <ul class="product-card__highlights">
+                <li>Rolled oats for gentle digestion</li>
+                <li>Natural beta-carotene boost</li>
+                <li>No added salt or palm oil</li>
+              </ul>
               <div class="product-card__footer">
-                <span class="price">$9.75</span>
-                <button class="btn btn--secondary" type="button" data-product="Peanut Butter Pumpkin Bites" data-price="9.75">
+                <div class="product-card__price-group">
+                  <span class="price">$9.75</span>
+                  <span class="product-card__note">Perfect for training</span>
+                </div>
+                <button
+                  class="btn btn--secondary"
+                  type="button"
+                  data-product="Peanut Butter Pumpkin Bites"
+                  data-price="9.75"
+                  data-pack="6 oz pouch"
+                >
                   Add to basket
                 </button>
               </div>
@@ -92,19 +152,43 @@
           </article>
 
           <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=600&q=80"
-              alt="Dog treat shaped like a donut"
-            />
+            <figure class="product-card__media">
+              <span class="product-card__badge">Customer favorite</span>
+              <img
+                src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"
+                alt="Decorated donut-shaped dog treats on parchment paper"
+                loading="lazy"
+              />
+            </figure>
             <div class="product-card__body">
-              <h3>Blueberry Yogurt Donuts</h3>
+              <div class="product-card__header">
+                <h3>Blueberry Yogurt Donuts</h3>
+                <div class="product-card__meta">
+                  <span class="product-card__meta-tag">4 count box</span>
+                  <span class="product-card__meta-tag">Probiotic glaze</span>
+                </div>
+              </div>
               <p class="product-card__description">
-                Oven-baked oat donuts dipped in probiotic yogurt glaze with wild
+                Oven-baked oat donuts dipped in tangy yogurt glaze and sprinkled with wild
                 blueberries.
               </p>
+              <ul class="product-card__highlights">
+                <li>Probiotic-rich goat milk yogurt</li>
+                <li>Natural beet and spirulina color</li>
+                <li>Soft crumb ideal for celebrations</li>
+              </ul>
               <div class="product-card__footer">
-                <span class="price">$13.00</span>
-                <button class="btn btn--secondary" type="button" data-product="Blueberry Yogurt Donuts" data-price="13.00">
+                <div class="product-card__price-group">
+                  <span class="price">$13.00</span>
+                  <span class="product-card__note">Ships chilled with ice packs</span>
+                </div>
+                <button
+                  class="btn btn--secondary"
+                  type="button"
+                  data-product="Blueberry Yogurt Donuts"
+                  data-price="13.00"
+                  data-pack="4 count box"
+                >
                   Add to basket
                 </button>
               </div>
@@ -112,19 +196,43 @@
           </article>
 
           <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=600&q=80"
-              alt="Dog treat shaped like bones"
-            />
+            <figure class="product-card__media">
+              <span class="product-card__badge product-card__badge--accent">Chewer approved</span>
+              <img
+                src="https://images.unsplash.com/photo-1509414924492-9dbe7953f885?auto=format&fit=crop&w=900&q=80"
+                alt="Sweet potato chew sticks bundled with twine"
+                loading="lazy"
+              />
+            </figure>
             <div class="product-card__body">
-              <h3>Sweet Potato Chew Sticks</h3>
+              <div class="product-card__header">
+                <h3>Sweet Potato Chew Sticks</h3>
+                <div class="product-card__meta">
+                  <span class="product-card__meta-tag">10 in a bundle</span>
+                  <span class="product-card__meta-tag">Single ingredient</span>
+                </div>
+              </div>
               <p class="product-card__description">
-                Long-lasting dehydrated sweet potato sticks to keep chewers busy
-                and satisfied.
+                Long-lasting dehydrated sweet potato sticks to keep chewers busy and
+                satisfied.
               </p>
+              <ul class="product-card__highlights">
+                <li>Slow-dried for a chewy texture</li>
+                <li>Rich in fiber and beta-carotene</li>
+                <li>No glycerin or artificial smoke</li>
+              </ul>
               <div class="product-card__footer">
-                <span class="price">$8.25</span>
-                <button class="btn btn--secondary" type="button" data-product="Sweet Potato Chew Sticks" data-price="8.25">
+                <div class="product-card__price-group">
+                  <span class="price">$8.25</span>
+                  <span class="product-card__note">Sourced from family farms</span>
+                </div>
+                <button
+                  class="btn btn--secondary"
+                  type="button"
+                  data-product="Sweet Potato Chew Sticks"
+                  data-price="8.25"
+                  data-pack="10 sticks"
+                >
                   Add to basket
                 </button>
               </div>
@@ -133,32 +241,128 @@
         </div>
       </section>
 
-      <section class="section section--alt">
-        <div class="container section__heading">
-          <h2>Why dogs love Pawfect Bites</h2>
+      <section class="section section--alt" id="story">
+        <div class="section__heading container">
+          <h2>Our kitchen promise</h2>
+          <p>
+            From sourcing to shipping, Pawfect Bites is built on transparency and thoughtful
+            nutrition for every dog we bake for.
+          </p>
         </div>
-        <div class="container feature-grid">
-          <article class="feature">
-            <h3>Human-grade ingredients</h3>
+        <div class="container standards-grid">
+          <article class="standard-card">
+            <h3>Vet-developed recipes</h3>
             <p>
-              Every treat is crafted with premium, locally sourced ingredients
-              that you can actually pronounce.
+              Developed alongside veterinary nutritionists and reviewed quarterly to ensure
+              balanced macros across protein, fat, and fiber.
             </p>
           </article>
-          <article class="feature">
-            <h3>Vet-approved recipes</h3>
+          <article class="standard-card">
+            <h3>Clean ingredient lists</h3>
             <p>
-              Formulated alongside veterinary nutritionists to balance flavor and
-              nutrition for your pup.
+              Only recognizable ingredients: whole meats, fruits, veggies, and functional
+              add-ins like chia and turmeric.
             </p>
           </article>
-          <article class="feature">
-            <h3>Baked fresh weekly</h3>
+          <article class="standard-card">
+            <h3>Responsible sourcing</h3>
             <p>
-              We bake in small batches to lock in freshness and ship directly to
-              your door.
+              We partner with regional farms that share our commitment to sustainable
+              agriculture and animal welfare.
             </p>
           </article>
+          <article class="standard-card">
+            <h3>Freshness guaranteed</h3>
+            <p>
+              Treats are baked in micro batches twice daily, sealed immediately, and shipped
+              with freshness indicators in every box.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__heading container">
+          <h2>Pet parent love</h2>
+          <p>Real stories from our community of devoted treat testers.</p>
+        </div>
+        <div class="container testimonial-grid">
+          <figure class="testimonial-card">
+            <blockquote>
+              “My picky doodle actually spins in circles when the Maple Bacon Crunchies come
+              out. The resealable pouch keeps them crunchy for weeks.”
+            </blockquote>
+            <figcaption>— Jamie &amp; Oakley</figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <blockquote>
+              “We use the pumpkin bites as high-value training treats. They break apart easily
+              without crumbling in my pocket.”
+            </blockquote>
+            <figcaption>— Priya &amp; Scout</figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <blockquote>
+              “The yogurt donuts are our pup’s birthday tradition. Love that the glaze is
+              probiotic and not just sugar.”
+            </blockquote>
+            <figcaption>— Marco &amp; Luna</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container cta">
+          <div class="cta__content">
+            <h2>Join the Treat Club</h2>
+            <p>
+              Get 10% off your first order, early access to limited flavors, and vet-backed
+              nutrition tips every month.
+            </p>
+          </div>
+          <form class="cta__form" aria-label="Join the Treat Club newsletter">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input
+              id="email"
+              class="cta__input"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <button class="btn btn--primary" type="submit">Get my discount code</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section__heading container">
+          <h2>Frequently asked questions</h2>
+          <p>Everything you need to know before hitting checkout.</p>
+        </div>
+        <div class="container faq">
+          <details class="faq__item">
+            <summary>How quickly will my treats arrive?</summary>
+            <p>
+              Orders placed before 2 p.m. EST ship the same day via two-day priority. You’ll
+              receive tracking as soon as your batch leaves our oven.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Do you offer allergy-friendly recipes?</summary>
+            <p>
+              Absolutely. Each season includes at least one recipe free from the top eight
+              canine allergens, and we list all ingredients and possible cross-contact
+              scenarios.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I set up a subscription?</summary>
+            <p>
+              Yes! Choose delivery every 2, 4, or 6 weeks. Subscriptions come with rotating
+              chef’s choice samples and can be paused anytime.
+            </p>
+          </details>
         </div>
       </section>
 
@@ -201,7 +405,9 @@
           <p>123 Tail Wag Lane<br />Barkington, PA 19001</p>
         </div>
       </div>
-      <p class="footer__credit">© <span id="year"></span> Pawfect Bites. All rights reserved.</p>
+      <p class="footer__credit">
+        © <span id="year"></span> Pawfect Bites. All rights reserved.
+      </p>
     </footer>
 
     <script src="app.js"></script>

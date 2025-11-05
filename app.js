@@ -44,15 +44,23 @@ function updateCartBadge() {
   }
 }
 
+function createEmptyCartMessage() {
+  const emptyMessage = document.createElement("li");
+  emptyMessage.classList.add("cart__item", "cart__item--empty");
+  emptyMessage.innerHTML = `
+    <div class="cart__item-info">
+      <span class="cart__item-name">Your basket is empty</span>
+      <span class="cart__item-pack">Add a best seller to start wagging tails.</span>
+    </div>
+  `;
+  return emptyMessage;
+}
+
 function renderCart() {
   cartItemsEl.innerHTML = "";
 
   if (cart.size === 0) {
-    const emptyMessage = document.createElement("li");
-    emptyMessage.classList.add("cart__item");
-    emptyMessage.innerHTML =
-      '<div class="cart__item-info"><span class="cart__item-name">Your basket is empty</span><span class="cart__item-price">Add treats to keep tails wagging</span></div>';
-    cartItemsEl.appendChild(emptyMessage);
+    cartItemsEl.appendChild(createEmptyCartMessage());
     cartTotalEl.textContent = formatCurrency(0);
     checkoutBtn.disabled = true;
     checkoutBtn.classList.add("btn--disabled");
@@ -70,9 +78,23 @@ function renderCart() {
     const infoDiv = document.createElement("div");
     infoDiv.classList.add("cart__item-info");
 
+    const headingDiv = document.createElement("div");
+    headingDiv.classList.add("cart__item-heading");
+
     const nameSpan = document.createElement("span");
     nameSpan.classList.add("cart__item-name");
     nameSpan.textContent = name;
+
+    headingDiv.appendChild(nameSpan);
+
+    if (item.pack) {
+      const packSpan = document.createElement("span");
+      packSpan.classList.add("cart__item-pack");
+      packSpan.textContent = item.pack;
+      headingDiv.appendChild(packSpan);
+    }
+
+    infoDiv.appendChild(headingDiv);
 
     const priceSpan = document.createElement("span");
     priceSpan.classList.add("cart__item-price");
@@ -80,7 +102,6 @@ function renderCart() {
       item.price
     )} = ${formatCurrency(item.price * item.quantity)}`;
 
-    infoDiv.appendChild(nameSpan);
     infoDiv.appendChild(priceSpan);
 
     const controlsDiv = document.createElement("div");
@@ -143,13 +164,14 @@ addToCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const name = button.dataset.product;
     const price = Number.parseFloat(button.dataset.price);
+    const pack = button.dataset.pack || "";
 
     const existing = cart.get(name);
 
     if (existing) {
       existing.quantity += 1;
     } else {
-      cart.set(name, { price, quantity: 1 });
+      cart.set(name, { price, quantity: 1, pack });
     }
 
     renderCart();
@@ -166,13 +188,16 @@ checkoutBtn.addEventListener("click", () => {
     return;
   }
 
-  const items = Array.from(cart.entries()).map(([name, item]) =>
-    `${item.quantity} × ${name}`
-  );
+  const items = Array.from(cart.entries()).map(([name, item]) => {
+    const packInfo = item.pack ? ` (${item.pack})` : "";
+    return `${item.quantity} × ${name}${packInfo}`;
+  });
   const { total } = getCartMetrics();
 
   alert(
-    `Thanks for shopping with Pawfect Bites! We'll send an invoice for: ${items.join(", ")} totaling ${formatCurrency(total)}.`
+    `Thanks for shopping with Pawfect Bites! We'll send an invoice for: ${items.join(
+      ", "
+    )} totaling ${formatCurrency(total)}.`
   );
 
   cart.clear();
